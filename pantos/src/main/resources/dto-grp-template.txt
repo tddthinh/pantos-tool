@@ -1,0 +1,16 @@
+package com.clt.logistics.moduleCode.bizCode.dto;
+
+import java.util.List;
+
+import com.clt.logistics.syscommon.common.dto.CommonDto;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data 
+@EqualsAndHashCode(callSuper=false)
+@NoArgsConstructor
+public class dtoClassName extends CommonDto {
+dtoFields
+}
