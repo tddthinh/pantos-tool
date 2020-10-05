@@ -14,16 +14,21 @@ import com.dthinh.tool.pantos.utils.RegexUtils;
 import com.dthinh.tool.pantos.utils.StringUtils;
 
 public class ScreenFramework {
-	public static String OMM_DIRS = "C:\\Users\\khoai\\Google Drive\\MyComShared\\Ideas\\Pantos Tools\\sample\\omms";
-	public static String SYS_DIRS = "C:\\Users\\khoai\\Google Drive\\MyComShared\\Ideas\\Pantos Tools\\sample\\omms\\eusu.clt.syscommon";
+	public static String OMM_DIRS = "C:\\Users\\thinh.tran\\Google Drive\\MyComShared\\Ideas\\Pantos Tools\\sample\\ldp";
+	public static String SYS_DIRS = "C:\\Users\\thinh.tran\\Google Drive\\MyComShared\\Ideas\\Pantos Tools\\sample\\ldp\\eusu.clt.syscommon";
 
 	public static void run(Screen sc, String targetPath) {
 		String txt = FileUtils.readFileToString(sc.getHTMLPath());
 		Matcher m = RegexUtils.matcher(txt, "\\b(\\w*omms?)\\b", Pattern.CASE_INSENSITIVE);
 		List<String> ommNameList = new ArrayList<String>();
 		while (m.find()) {
-			ommNameList.add(StringUtils.convertOMMVarToOMMVar(m.group()));
+			String g = m.group();
+			if ("ds".toUpperCase().equals(g.toUpperCase().substring(0, 2))) {
+				g = g.substring(2, g.length());
+			}
+			ommNameList.add(g);
 		}
+		ommNameList.add("ReportAttatchInfoOMM");
 		sc.setOmmNameList(ommNameList);
 
 		StringUtils.removeDuplicate(ommNameList);

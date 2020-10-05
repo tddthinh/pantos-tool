@@ -3,3 +3,4 @@ com\dthinh\tool\pantos\entity\Screen.class
 com\dthinh\tool\pantos\utils\RegexUtils.class
 com\dthinh\tool\pantos\utils\FileUtils.class
 com\dthinh\tool\pantos\utils\StringUtils.class
+com\dthinh\tool\pantos\framework\ScreenFramework.class
