@@ -31,15 +31,9 @@ public class StringUtils {
 	public static String formatHTML(Screen sc) {
 		String content = formatHTMLOMMSyntax(sc);
 		content = formatHTMLMsgbox(sc);
-		content = formatHTMLMsgbox(sc);
+		content = formatHTMLOMMSyntax(sc);
 		return content;
 
-	}
-
-	public static String replaceHTMLOMMWithDto(Screen sc) {
-		String content = formatHTMLOMMSyntax(sc);
-
-		return content;
 	}
 
 	public static String formatHTMLOMMSyntax(Screen sc) {
@@ -55,12 +49,12 @@ public class StringUtils {
 
 	public static String formatHTMLMsgbox(Screen sc) {
 		String content = FileUtils.readFileToString(sc.getHTMLPath());
-//		Matcher m = RegexUtils.matcher(content, "(onsite\\.messageBox\\(.*\\))");
-//		while (m.find()) {
-//			String msgbox = m.group();
-//			int i = msgbox.indexOf('(');
+		Matcher m = RegexUtils.matcher(content, "(onsite\\.messageBox\\(.*\\))");
+		while (m.find()) {
+			String msgbox = m.group();
+			int i = msgbox.indexOf('(');
 //			msgbox.substring(0, i)+""
-//		}
+		}
 		return content;
 	}
 

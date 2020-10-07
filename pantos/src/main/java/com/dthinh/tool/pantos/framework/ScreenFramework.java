@@ -28,7 +28,6 @@ public class ScreenFramework {
 			}
 			ommNameList.add(g);
 		}
-		ommNameList.add("ReportAttatchInfoOMM");
 		sc.setOmmNameList(ommNameList);
 
 		StringUtils.removeDuplicate(ommNameList);
@@ -48,8 +47,16 @@ public class ScreenFramework {
 		List<String> dtoNameList = new ArrayList<String>();
 		List<Path> dtoFilePathList = new ArrayList<Path>();
 		String dtoTarget = targetPath + "\\dtos\\";
-		for (Path p : ommFilePathList) {
+		for(int i = 0; i < ommFilePathList.size(); i++) {
+			Path p = ommFilePathList.get(i);
 			String ommContent = FileUtils.readFileToString(p.toString());
+			m = RegexUtils.matcher(ommContent, "	.*\\.(\\w*omms?) ", Pattern.CASE_INSENSITIVE);
+			while (m.find()) {
+				String g = m.group(1);
+				List<String> tempArr = new ArrayList<String>();
+				tempArr.add(g);
+				ommFilePathList.addAll(FileUtils.findOMMFiles(OMM_DIRS, tempArr, Integer.MAX_VALUE));
+			}
 			try {
 				Path dtoPath = FileUtils.writeDto(p.getFileName().toString(), ommContent, dtoTarget);
 				dtoNameList.add(dtoPath.getFileName().toString().replaceAll("\\.java", ""));
@@ -63,6 +70,5 @@ public class ScreenFramework {
 		
 		sc.setTargetPath(targetPath);
 		
-		System.out.println(StringUtils.replaceHTMLOMMWithDto(sc));
 	}
 }
