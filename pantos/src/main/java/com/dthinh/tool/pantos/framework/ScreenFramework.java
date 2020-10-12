@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,8 +15,8 @@ import com.dthinh.tool.pantos.utils.RegexUtils;
 import com.dthinh.tool.pantos.utils.StringUtils;
 
 public class ScreenFramework {
-	public static String MAIN_DIRS = "C:\\Users\\thinh.tran\\Google Drive\\MyComShared\\Ideas\\Pantos Tools\\sample\\ldp";
-	public static String SYS_DIRS = "C:\\Users\\thinh.tran\\Google Drive\\MyComShared\\Ideas\\Pantos Tools\\sample\\ldp\\eusu.clt.syscommon";
+	public static String MAIN_DIRS;
+	public static String SYS_DIRS;
 	public static boolean isInitial = true;
 
 	public static void run(Screen sc) throws IOException, URISyntaxException {

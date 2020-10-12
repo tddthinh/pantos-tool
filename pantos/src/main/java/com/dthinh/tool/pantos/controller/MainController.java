@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Properties;
@@ -17,7 +16,6 @@ import java.util.ResourceBundle;
 import com.dthinh.tool.pantos.entity.Screen;
 import com.dthinh.tool.pantos.framework.ScreenFramework;
 import com.dthinh.tool.pantos.utils.FileUtils;
-import com.dthinh.tool.pantos.utils.StringUtils;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +26,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class MainController implements Initializable {
@@ -190,7 +187,12 @@ public class MainController implements Initializable {
 
 	@FXML
 	void openTargetDir(ActionEvent event) {
-
+		try {
+			Runtime.getRuntime().exec("explorer.exe /open," + targetField.getText()+"\\");
+		} catch (IOException e) {
+			logArea.setText(e.toString());
+			e.printStackTrace();
+		}
 	}
 
 	void setTextFields(Screen sc) {
@@ -262,6 +264,7 @@ public class MainController implements Initializable {
 			htmlField.setText(prop.getProperty("init.htmlpath"));
 			targetField.setText(prop.getProperty("init.targetpath"));
 			ldpField.setText(prop.getProperty("init.ldppath"));
+			currentPath = prop.getProperty("init.targetpath");
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
