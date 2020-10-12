@@ -18,7 +18,7 @@ public class App extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		try {
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Scene.fxml"));
-			primaryStage.setTitle("Application Title");
+			primaryStage.setTitle("Copying Related LDP's Files");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
 			MainController.stage = primaryStage;
