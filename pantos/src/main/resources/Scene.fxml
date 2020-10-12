@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="705.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dthinh.tool.pantos.controller.MainController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TitledPane animated="false" text="Step 1 [Load Screen to analyze OMM &amp; Svc]">
+              <content>
+                <AnchorPane prefHeight="407.0" prefWidth="1050.0">
+                     <children>
+                        <Button fx:id="htmlBtn" layoutX="869.0" layoutY="11.0" mnemonicParsing="false" onAction="#selectHTML" prefHeight="25.0" prefWidth="90.0" text="Select HTML" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <TextField fx:id="htmlField" layoutX="39.6" layoutY="29.6" prefHeight="25.0" prefWidth="818.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="10.0" />
+                        <TextField fx:id="targetField" layoutX="39.6" layoutY="64.6" prefHeight="25.0" prefWidth="818.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="45.0" />
+                        <Button fx:id="targetBtn" layoutX="851.0" layoutY="64.6" mnemonicParsing="false" onAction="#selectDirTarget" prefHeight="25.0" prefWidth="90.0" text="Dir Target" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                        <Button fx:id="run1Btn" layoutX="880.0" layoutY="85.0" mnemonicParsing="false" onAction="#run1Btn" prefHeight="25.0" prefWidth="90.0" text="Run" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0" />
+                        <TextField fx:id="ldpField" layoutX="41.0" layoutY="93.0" prefHeight="25.0" prefWidth="818.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="80.0" />
+                        <Button fx:id="ldpBtn" layoutX="863.0" layoutY="90.0" mnemonicParsing="false" onAction="#selectDirLDP" prefHeight="25.0" prefWidth="90.0" text="LDP Folder" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Step 2 [Search Details In File]">
+              <content>
+                <AnchorPane prefHeight="635.0" prefWidth="1050.0">
+                     <children>
+                        <BorderPane layoutX="465.0" layoutY="29.0" prefHeight="402.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <GridPane BorderPane.alignment="TOP_LEFT">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="54.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="162.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="87.0" minHeight="0.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="213.0" minHeight="10.0" prefHeight="167.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextArea fx:id="ommNameField" prefHeight="174.0" prefWidth="156.0" GridPane.rowIndex="1" />
+                                    <Label text="OMM Name List" />
+                                    <TextArea fx:id="dtoNameField" editable="false" prefHeight="140.0" prefWidth="200.0" GridPane.rowIndex="3" />
+                                    <Label text="Dto Name List" GridPane.rowIndex="2" />
+                                    <Label text="Svc Method List" GridPane.columnIndex="1" />
+                                    <Label text="Svc Name List" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextArea fx:id="svcNameField" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextArea fx:id="svcMethodField" prefHeight="140.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label text="Biz Name List" GridPane.columnIndex="2" />
+                                    <Label text="Biz Method List" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <TextArea fx:id="bizMethodField" prefHeight="140.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <TextArea fx:id="bizNameField" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <TextArea fx:id="daoNameField" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextArea fx:id="daoMethodField" prefHeight="140.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <Label text="DAO Method List" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <Label text="DAO Name List" GridPane.columnIndex="3" />
+                                    <Label text="DBIO Name List" GridPane.columnIndex="4" />
+                                    <Label text="DBIO Method List" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                    <TextArea fx:id="dbioMethodField" prefHeight="140.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                    <TextArea fx:id="dbioNameField" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <right>
+                              <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button fx:id="run2Btn" mnemonicParsing="false" onAction="#run2Btn" prefHeight="25.0" prefWidth="90.0" text="Run" />
+                                    <Separator prefWidth="200.0" />
+                                    <Button fx:id="openTargetBtn" mnemonicParsing="false" onAction="#openTargetDir" prefHeight="25.0" prefWidth="106.0" text="Open Target Dir" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Log [Results]">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="356.0" prefWidth="973.0">
+                     <children>
+                        <TextArea fx:id="logArea" prefHeight="99.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

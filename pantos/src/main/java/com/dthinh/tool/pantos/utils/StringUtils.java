@@ -1,10 +1,13 @@
 package com.dthinh.tool.pantos.utils;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 
 import com.dthinh.tool.pantos.entity.Screen;
+
 
 public class StringUtils {
 	public static void removeDuplicate(List<String> strs) {
@@ -14,6 +17,17 @@ public class StringUtils {
 		}
 		strs.clear();
 		strs.addAll(set);
+	}
+
+	public static void removePathDuplicate(List<Path> strs) {
+		TreeSet<String> set = new TreeSet<String>();
+		for (Path s : strs) {
+			set.add(s.toString());
+		}
+		strs.clear();
+		for (String s : set) {
+			strs.add(Paths.get(s));
+		}
 	}
 
 	public static String convertOMMVarToDtoVar(String ommVar) {
@@ -51,8 +65,8 @@ public class StringUtils {
 		String content = FileUtils.readFileToString(sc.getHTMLPath());
 		Matcher m = RegexUtils.matcher(content, "(onsite\\.messageBox\\(.*\\))");
 		while (m.find()) {
-			String msgbox = m.group();
-			int i = msgbox.indexOf('(');
+//			String msgbox = m.group();
+//			int i = msgbox.indexOf('(');
 //			msgbox.substring(0, i)+""
 		}
 		return content;
