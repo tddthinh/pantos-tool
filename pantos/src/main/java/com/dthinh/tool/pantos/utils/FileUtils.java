@@ -262,7 +262,7 @@ public class FileUtils {
 						if (line == null)
 							break;
 						if ((line.contains("public ") || line.contains("private "))
-								&& line.contains(searchQuery + "(")) {
+								&& line.contains(searchQuery)) {
 							sb.append(line + "\n");
 							while ((line = br.readLine()) != null) {
 								if (line.contains(endTag)) {

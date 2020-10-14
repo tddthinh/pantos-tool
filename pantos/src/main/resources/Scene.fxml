@@ -12,23 +12,15 @@
          <children>
             <TitledPane animated="false" text="Step 1 [Load Screen to analyze OMM &amp; Svc]">
               <content>
-                <AnchorPane prefHeight="469.0" prefWidth="1050.0">
+                <AnchorPane prefHeight="407.0" prefWidth="1050.0">
                      <children>
-                        <VBox alignment="TOP_RIGHT" layoutX="28.6" layoutY="33.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Button fx:id="htmlBtn" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#selectHTML" prefHeight="25.0" prefWidth="90.0" text="Select HTML">
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </Button>
-                              <TextField fx:id="ldpField" prefHeight="25.0" prefWidth="818.0" />
-                              <Button fx:id="targetBtn" mnemonicParsing="false" onAction="#selectDirTarget" prefHeight="25.0" prefWidth="90.0" text="Dir Target" />
-                              <TextField fx:id="targetField" prefHeight="25.0" prefWidth="818.0" />
-                              <Button fx:id="ldpBtn" mnemonicParsing="false" onAction="#selectDirLDP" prefHeight="25.0" prefWidth="90.0" text="LDP Folder" />
-                              <TextField fx:id="htmlField" prefHeight="25.0" prefWidth="818.0" />
-                              <Button fx:id="run1Btn" mnemonicParsing="false" onAction="#run1Btn" prefHeight="25.0" prefWidth="90.0" text="Run" />
-                           </children>
-                        </VBox>
+                        <Button fx:id="htmlBtn" layoutX="869.0" layoutY="11.0" mnemonicParsing="false" onAction="#selectHTML" prefHeight="25.0" prefWidth="90.0" text="Select HTML" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <TextField fx:id="htmlField" layoutX="39.6" layoutY="29.6" prefHeight="25.0" prefWidth="818.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="10.0" />
+                        <TextField fx:id="targetField" layoutX="39.6" layoutY="64.6" prefHeight="25.0" prefWidth="818.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="45.0" />
+                        <Button fx:id="targetBtn" layoutX="851.0" layoutY="64.6" mnemonicParsing="false" onAction="#selectDirTarget" prefHeight="25.0" prefWidth="90.0" text="Dir Target" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                        <Button fx:id="run1Btn" layoutX="880.0" layoutY="85.0" mnemonicParsing="false" onAction="#run1Btn" prefHeight="25.0" prefWidth="90.0" text="Run" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0" />
+                        <TextField fx:id="ldpField" layoutX="41.0" layoutY="93.0" prefHeight="25.0" prefWidth="818.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="80.0" />
+                        <Button fx:id="ldpBtn" layoutX="863.0" layoutY="90.0" mnemonicParsing="false" onAction="#selectDirLDP" prefHeight="25.0" prefWidth="90.0" text="LDP Folder" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
                      </children>
                   </AnchorPane>
               </content>
@@ -82,7 +74,7 @@
                                  <children>
                                     <Button fx:id="run2Btn" mnemonicParsing="false" onAction="#run2Btn" prefHeight="25.0" prefWidth="90.0" text="Run" />
                                     <Separator prefWidth="200.0" />
-                                    <Button fx:id="openTargetBtn" mnemonicParsing="false" onAction="#openTargetDir" prefHeight="25.0" prefWidth="90.0" text="Open Target" />
+                                    <Button fx:id="openTargetBtn" mnemonicParsing="false" onAction="#openTargetDir" prefHeight="25.0" prefWidth="106.0" text="Open Target Dir" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />
@@ -96,9 +88,9 @@
             </TitledPane>
             <TitledPane animated="false" text="Log [Results]">
               <content>
-                <AnchorPane maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="356.0" prefWidth="973.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="356.0" prefWidth="973.0">
                      <children>
-                        <TextArea fx:id="logArea" maxHeight="1.7976931348623157E308" prefHeight="99.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <TextArea fx:id="logArea" prefHeight="99.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
               </content>
